@@ -131,16 +131,17 @@ const disclaimerButton = document.getElementById('disclaimer-continue');
 if (disclaimer) {
   const showDisclaimer = () => disclaimer.classList.add('is-active');
   const hideDisclaimer = () => disclaimer.classList.remove('is-active');
-  const navEntry = performance.getEntriesByType('navigation')[0];
-  const isReload = navEntry ? navEntry.type === 'reload' : performance.navigation && performance.navigation.type === 1;
+  const disclaimerSeenKey = 'disclaimer-seen';
+  const hasSeenDisclaimer = sessionStorage.getItem(disclaimerSeenKey) === 'true';
 
-  if (isReload) {
+  if (!hasSeenDisclaimer) {
     showDisclaimer();
   }
 
   if (disclaimerButton) {
     disclaimerButton.addEventListener('click', () => {
       hideDisclaimer();
+      sessionStorage.setItem(disclaimerSeenKey, 'true');
     });
   }
 }
