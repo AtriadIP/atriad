@@ -129,8 +129,15 @@ const disclaimer = document.querySelector('.disclaimer');
 const disclaimerButton = document.getElementById('disclaimer-continue');
 
 if (disclaimer) {
-  const showDisclaimer = () => disclaimer.classList.add('is-active');
-  const hideDisclaimer = () => disclaimer.classList.remove('is-active');
+  const showDisclaimer = () => {
+    disclaimer.classList.add('is-active');
+    // prevent background scrolling while disclaimer is visible
+    document.body.style.overflow = 'hidden';
+  };
+  const hideDisclaimer = () => {
+    disclaimer.classList.remove('is-active');
+    document.body.style.overflow = '';
+  };
   const disclaimerSeenKey = 'disclaimer-seen';
   const hasSeenDisclaimer = sessionStorage.getItem(disclaimerSeenKey) === 'true';
 
