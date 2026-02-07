@@ -1112,6 +1112,34 @@ img {
   }
 }
 
+/* Stronger mobile rules to prevent overflow and broken images */
+@media (max-width: 720px) {
+  .ip__viewport {
+    max-width: 100% !important;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .ip__cards {
+    flex-wrap: wrap !important;
+    gap: 1rem;
+  }
+
+  .ip__card {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+
+  .ip__carousel .ip__card img {
+    height: auto !important;
+    aspect-ratio: 4 / 3 !important;
+    max-height: none !important;
+    max-width: 100% !important;
+    object-fit: cover;
+  }
+}
+
 .ip__card img {
   width: 100%;
   aspect-ratio: 4 / 3;
