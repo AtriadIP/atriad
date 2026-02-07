@@ -168,6 +168,12 @@ img {
   }
 }
 
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 0 2.5rem;
+  }
+}
+
 .hero::before {
   content: '';
   position: absolute;
@@ -194,9 +200,10 @@ img {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-size: clamp(1.75rem, 5vw, 3.5rem);
   margin: 0.5rem 0 1rem;
   font-family: inherit;
+  line-height: 1.2;
 }
 
 
@@ -232,6 +239,13 @@ img {
   }
 }
 
+@media (max-width: 480px) {
+  .hero__media {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}
+
 .hero__card {
   position: relative;
   background: rgba(255, 255, 255, 0.95);
@@ -240,6 +254,12 @@ img {
   border-radius: 0.85rem;
   box-shadow: 0 12px 24px rgba(18, 18, 36, 0.08), 0 20px 40px rgba(183, 156, 106, 0.2);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (max-width: 480px) {
+  .hero__card {
+    padding: 0.75rem 0.85rem;
+  }
 }
 
 .hero__card::after {
@@ -259,14 +279,14 @@ img {
 
 .hero__card h3 {
   margin: 0 0 0.35rem;
-  font-size: 1.05rem;
+  font-size: clamp(0.85rem, 2.5vw, 1.05rem);
   font-weight: 700;
   color: #1a1a2b;
 }
 
 .hero__card p {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
   color: var(--muted);
 }
 
@@ -277,6 +297,12 @@ img {
 @media (max-width: 768px) {
   .section {
     padding: 2.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 1.75rem 0;
   }
 }
 
@@ -297,7 +323,7 @@ img {
 .eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 2vw, 0.85rem);
   color: var(--primary);
   font-weight: 600;
 }
@@ -323,6 +349,12 @@ img {
 @media (min-width: 960px) {
   .about__grid {
     grid-template-columns: 1.1fr 0.9fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .about__grid {
+    gap: 1.5rem;
   }
 }
 
