@@ -232,6 +232,25 @@ img {
   }
 }
 
+@media (max-width: 480px) {
+  .hero__media {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .hero__card {
+    padding: 0.8rem;
+  }
+
+  .hero__card h3 {
+    font-size: 1rem;
+  }
+
+  .hero__card p {
+    font-size: 0.9rem;
+  }
+}
+
 .hero__card {
   position: relative;
   background: rgba(255, 255, 255, 0.95);
@@ -983,6 +1002,25 @@ img {
 }
 
 @media (max-width: 720px) {
+  /* allow the ip cards to wrap on narrow screens to avoid overflow */
+  .ip__cards {
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+
+  .ip__card {
+    flex: 0 0 100%;
+  }
+
+  .ip__carousel .ip__card img,
+  .ip__card img {
+    max-height: 220px;
+    height: auto;
+    aspect-ratio: auto;
+  }
+}
+
+@media (max-width: 720px) {
   .ip__carousel {
     grid-template-columns: 1fr;
   }
@@ -1036,6 +1074,21 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+}
+
+@media (max-width: 480px) {
+  .team__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav__logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav__brand-title {
+    font-size: 1.05rem;
+  }
 }
 
 @media (max-width: 768px) {
